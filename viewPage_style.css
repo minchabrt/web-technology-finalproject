@@ -1,0 +1,42 @@
+body{
+    background-color: #252525;
+}
+.main-kartica {
+    display: flex;       /* Ovo automatski ređa potomke vodoravno */
+     /* Ovo će centrirati tekst po vertikali u odnosu na sliku */
+    gap: 20px;            /* Ovo pravi razmak između slike i teksta */
+    margin-bottom: 20px;
+    margin-left: 50px; 
+    margin-top: 20px; /* Malo razmaka ispod kartice */
+}
+
+/* Opciono: Ograniči veličinu slike da ne bi bila prevelika */
+.main-kartica img {
+    max-width: 250px;     
+    height: auto;
+
+}
+.main-title{
+    font-size: 30px;
+    color: white;
+}
+ul {
+  list-style-type: none;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #0320fc;
+}
+
+ul li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+ul li a img{
+    max-width: 200px;
+    height: auto;
+}
