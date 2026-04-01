@@ -1,4 +1,8 @@
-body{
+
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
     background-color: #252525;
 }
 .main-kartica {
@@ -31,22 +35,22 @@ body{
     color: white;
 }
 ul {
-  list-style-type: none;
-  width: 100%;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-  background-color: #0320fc;
+    list-style-type: none;
+    width: 100%;
+    margin: 0; /* Ovo osigurava da nema razmaka gore i sa strana */
+    padding: 0;
+    overflow: hidden;
+    background-color: #0320fc;
+    display: block; /* Osigurava da se ponaša kao puni blok */
+}
+ul li {
+    padding-left: 20px; /* Ovo suptilno pomera logo udesno unutar plave trake */
 }
 
-ul li a {
-  display: block;
-  color: white;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-}
-ul li a img{
-    max-width: 200px;
+ul li img{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 130px;
     height: auto;
 }
