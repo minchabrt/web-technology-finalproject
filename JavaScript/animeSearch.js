@@ -16,9 +16,12 @@ searchBtn.addEventListener('click', () => {
     
 });
 
-export function fetchData(searchQuery){
+function fetchData(searchQuery){
 
-    //slanje zahteva
-
+fetch(`https://api.jikan.moe/v4/anime?q=${searchQuery}`)
+    .then(response => response.json())
+    .then(data => {
+        console.log(data); // Ovde ćeš videti niz rezultata
+    });
 
 }
