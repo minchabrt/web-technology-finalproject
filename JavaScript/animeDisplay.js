@@ -1,3 +1,5 @@
+const logoHref = document.getElementById('logo');
+
 let urlParam = new URLSearchParams(window.location.search);
 let searchedAnime = urlParam.get('anime');
 
