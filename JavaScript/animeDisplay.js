@@ -1,3 +1,33 @@
-import { query } from "./animeSearch";
+let urlParam = new URLSearchParams(window.location.search);
+let searchedAnime = urlParam.get('anime');
 
-console.log(query);
+let jsonData;
+
+fetchData(searchedAnime);
+
+
+
+function fetchData(searchQuery){
+
+fetch(`https://api.jikan.moe/v4/anime?q=${searchQuery}`)
+    .then(response => {
+        if(response.status != 200){
+            console.log(`Error. Status code ${response.status}`);
+            return;
+        }
+
+    return response.json()
+    } )
+    .then(data => {
+        
+        document.getElementById("anime-title").innerHTML = data.data[0].title;
+        document.getElementById("anime-title-japanese").innerHTML = data.data[0].title_japanese;
+        document.getElementById("anime-poster").src=`${data.data[0].images.jpg.image_url}`
+        document.getElementById("anime-title").innerHTML = data.data[0].title;
+        document.getElementById("anime-title").innerHTML = data.data[0].title;
+        
+        
+        console.log(data);
+    });
+ }
+
