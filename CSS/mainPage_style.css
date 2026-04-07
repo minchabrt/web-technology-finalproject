@@ -5,12 +5,8 @@ html, body {
     width: 100%;
 }
 body {
-    background-image: url("Images/panelBg.png");
-    background-size: cover;      /* Razvuci sliku preko celog ekrana */
-    background-position: center; /* Centriraj sliku */
-    background-attachment: fixed; /* Slika stoji dok skroluješ */
-    min-height: 100vh;           /* Forsiraj visinu celog ekrana */
     margin: 0;
+    overflow: hidden;
 }
 input[type=text] {
 width: 20%;
@@ -41,3 +37,10 @@ border-radius: 5px;
     width: 30%;
     height: auto;
 }
+#ch_naruto{
+    position: absolute;
+    height: 150vh;
+    width: auto;
+    top: 10vh;
+}
+

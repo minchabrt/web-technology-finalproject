@@ -1,9 +1,15 @@
 
+@font-face {
+  font-family: "San Francisco";
+  font-weight: 400;
+  src: url("https://applesocial.s3.amazonaws.com/assets/styles/fonts/sanfrancisco/sanfranciscodisplay-regular-webfont.woff");
+}
 html, body {
     margin: 0;
     padding: 0;
     width: 100%;
     background-color: #252525;
+    font-family: "San Francisco" ;
 }
 .main-kartica {
     display: flex;       
@@ -53,4 +59,7 @@ ul li img{
     margin-right: auto;
     max-width: 130px;
     height: auto;
+}
+.trailer{
+    position: absolute;
 }
