@@ -28,7 +28,7 @@ fetch(`https://api.jikan.moe/v4/anime?q=${searchQuery}`)
         document.getElementById("anime-desc").innerHTML = data.data[0].synopsis;
         document.getElementById("anime-trailer").src = data.data[0].trailer.embed_url;
         
-        
+        document.getElementById("page-loader").style.opacity = "1";
         console.log(data);
     });
  }

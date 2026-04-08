@@ -4,6 +4,10 @@
   font-weight: 400;
   src: url("https://applesocial.s3.amazonaws.com/assets/styles/fonts/sanfrancisco/sanfranciscodisplay-regular-webfont.woff");
 }
+#page-loader{
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
 html, body {
     margin: 0;
     padding: 0;
