@@ -8,6 +8,9 @@ body {
     margin: 0;
     overflow: hidden;
 }
+#main{
+    text-align: center;
+}
 input[type=text] {
 width: 20%;
 padding: 12px;
@@ -16,6 +19,7 @@ box-sizing: border-box;
 border-radius: 5px;
 align-items: center;
 }
+
 #search-btn{
 width: 8%;
 padding: 12px;
@@ -28,6 +32,18 @@ border-radius: 5px;
 }
 #search-btn:hover{
     background-color: rgb(0, 21, 138);
+}
+#banner {
+    position: absolute;
+    top: 0;           /* Lepe ga za vrh stranice */
+    left: 50%;        /* Pomera levu ivicu slike na sredinu ekrana */
+    transform: translateX(-50%); /* Vraća sliku za pola njene širine ulevo da bude centrirana */
+    z-index: -10;
+    width: 40%;       /* Podesi širinu bannera po želji */
+    height: auto;
+
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    border-radius: 0 0 15px 15px;
 }
 #logo{
     

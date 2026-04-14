@@ -5,6 +5,8 @@ const resultsContainer = document.getElementById('results');
 
 let query;
 
+
+
 searchEnter.addEventListener("keydown", function(event){
     if(event.key === 'Enter'){
         event.preventDefault();
