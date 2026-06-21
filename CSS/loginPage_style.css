@@ -1,0 +1,44 @@
+@font-face {
+  font-family: "San Francisco";
+  font-weight: 400;
+  src: url("https://applesocial.s3.amazonaws.com/assets/styles/fonts/sanfrancisco/sanfranciscodisplay-regular-webfont.woff");
+}
+body{
+    margin: 0;
+    position: relative;
+    background-color: rgb(1, 32, 206);
+    overflow: hidden;
+    height: 100vh;
+}
+#banner {
+    position: absolute;
+    top: 0;        
+    left: 50%;        
+    transform: translateX(-50%); 
+    
+    width: 40%;       
+    height: auto;
+
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    border-radius: 0 0 15px 15px;
+}
+#logo{
+    position: relative;
+    display: block;
+    margin: 0 auto;
+    width: 30%;
+    z-index: 3;
+}
+#login-container{
+    position: relative;
+    text-align: center;
+    z-index: 5;
+}
+#login-form input[type=text], #login-form input[type=password] {
+    width: 20%;
+    padding: 12px;
+    margin: 10px 0;
+    box-sizing: border-box;
+    border-radius: 5px;
+    align-items: center;
+}
