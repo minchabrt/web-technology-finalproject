@@ -4,26 +4,19 @@
   src: url("https://applesocial.s3.amazonaws.com/assets/styles/fonts/sanfrancisco/sanfranciscodisplay-regular-webfont.woff");
 }
 body {
-margin: 0;
-    padding: 0;
-    min-height: 100vh;
-    width: 100%;
-    font-family: "San Francisco" ;
-
+position: relative;
     margin: 0;
+    min-height: 100vh;
     overflow: hidden;
-
-    /* The URL can be a local file path or a web link */
-    background-image: url('/Images/panelBg.png');
-
-    /* These properties ensure the image covers the whole screen */
+    background-image: url("/Images/panelBg.png");
     background-repeat: no-repeat;
-    background-attachment: fixed;
     background-size: cover;
     background-position: center;
 }
 #main{
+    position: relative;
     text-align: center;
+    z-index: 5;
 }
 input[type=text] {
 width: 20%;
@@ -52,7 +45,7 @@ border-radius: 5px;
     top: 0;           /* Lepe ga za vrh stranice */
     left: 50%;        /* Pomera levu ivicu slike na sredinu ekrana */
     transform: translateX(-50%); /* Vraća sliku za pola njene širine ulevo da bude centrirana */
-    z-index: -10;
+    
     width: 40%;       /* Podesi širinu bannera po želji */
     height: auto;
 
@@ -61,18 +54,18 @@ border-radius: 5px;
 }
 #logo{
     
+    position: relative;
     display: block;
-  margin-left: auto;
-  margin-right: auto;
+    margin: 0 auto;
     width: 30%;
-    height: auto;
+    z-index: 3;
 }
 #ch_naruto{
     position: absolute;
     height: 150vh;
     width: auto;
     top: 10vh;
-    z-index: -1;
+    
 }
 #ch_bleach{
     position: absolute;
@@ -80,5 +73,13 @@ border-radius: 5px;
     width: auto;
     top: 30vh;
     left: 140vh;
-    z-index: -1;
+    
+}
+#bg-gradient{
+    position: absolute;
+    height: auto;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 0;
 }
