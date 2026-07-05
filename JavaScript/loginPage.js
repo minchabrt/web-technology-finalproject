@@ -1,0 +1,6 @@
+
+function submitForm() {
+
+    history.back();
+
+}

@@ -48,6 +48,7 @@ buttons.forEach(function(button) {
 });
 
 function login() {
+    sessionStorage.setItem("cameFromLogin", "true");
     window.location.href = "login.html";
 }
 
@@ -65,8 +66,20 @@ function scrollFunction() {
   }
 }
 
-// When the user clicks on the button, scroll to the top of the document
 function topFunction() {
-  document.body.scrollTop = 0; // For Safari
-  document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+  document.documentElement.scrollTop = 0;
 }
+
+function hideCommentButton() {
+    const addCommentBtn = document.getElementById("add-comment-btn");
+    const cameFromLogin = sessionStorage.getItem("cameFromLogin");
+
+    if (cameFromLogin === "true" && addCommentBtn) {
+        addCommentBtn.style.display = "none";
+    }
+
+    sessionStorage.removeItem("cameFromLogin");
+}
+
+window.addEventListener("load", hideCommentButton);
+window.addEventListener("pageshow", hideCommentButton);
