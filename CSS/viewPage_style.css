@@ -4,7 +4,7 @@
   src: url("https://applesocial.s3.amazonaws.com/assets/styles/fonts/sanfrancisco/sanfranciscodisplay-regular-webfont.woff");
 }
 body{
-    
+    font-family: "San Francisco";
 }
 #page-loader{
     opacity: 0;
