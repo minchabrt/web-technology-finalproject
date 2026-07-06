@@ -1,6 +1,6 @@
 
 function submitForm() {
 
-    history.back();
+    history.back(); // Kada se submit-uje forma, korisnik se vraca na prethodnu stranicu
 
 }

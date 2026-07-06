@@ -1,26 +1,23 @@
-const logoHref = document.getElementById('logo');
+let urlParam = new URLSearchParams(window.location.search); // Uzima ceo link i stavlja u prom.
+let searchedAnime = urlParam.get('anime'); // Uzima se vrednost parametra 'anime' i linka
 
-let urlParam = new URLSearchParams(window.location.search);
-let searchedAnime = urlParam.get('anime');
 
-let jsonData;
-
-fetchData(searchedAnime);
+fetchData(searchedAnime); 
 
 
 
 function fetchData(searchQuery){
 
-fetch(`https://api.jikan.moe/v4/anime?q=${searchQuery}`)
+fetch(`https://api.jikan.moe/v4/anime?q=${searchQuery}`) // Salje se API zahtev sa parametrima anime-a
     .then(response => {
-        if(response.status != 200){
+        if(response.status != 200){ // Ukoliko status nije OK, ispisuje se greska
             console.log(`Error. Status code ${response.status}`);
             return;
         }
 
-    return response.json()
+    return response.json() // Ako je responese OK, vraca se json objekat
     } )
-    .then(data => {
+    .then(data => { // Svaki od elemenata na HTML stranici dobija vrednost iz json objekta
         
         document.getElementById("anime-title").innerHTML = data.data[0].title;
         document.getElementById("anime-title-japanese").innerHTML = data.data[0].title_japanese;
@@ -28,10 +25,13 @@ fetch(`https://api.jikan.moe/v4/anime?q=${searchQuery}`)
         document.getElementById("anime-desc").innerHTML = data.data[0].synopsis;
         document.getElementById("anime-trailer").src = data.data[0].trailer.embed_url;
         
-        document.getElementById("page-loader").style.opacity = "1";
-        console.log(data);
+        document.getElementById("page-loader").style.opacity = "1"; // Kada se dodele sve vrednosti, onda se tek load-a stranica
+        console.log(data); // Za svaki slucaj izbacujemo stvari iz json file-a u konzolu
     });
  }
+
+// -----------------------------------------------------------------------------------------
+// CELA FUNKCIJA LAJKOVANJA I OD-LAJKOVANJA KOMENTARA
 
 let buttons = document.querySelectorAll(".like-button");
 
@@ -39,23 +39,39 @@ buttons.forEach(function(button) {
     button.addEventListener('click', function() {
         let likeImage = this.querySelector(".like-button-image");
         
-        if (likeImage.src.includes('Images/like-button2.png')) {
+        if (likeImage.src.includes('Images/like-button2.png')) { // Ako je vec lajkovano - odlajkuj
             likeImage.src = 'Images/like-button1.png';
         } else {
-            likeImage.src = 'Images/like-button2.png';
+            likeImage.src = 'Images/like-button2.png'; // Ako nije lajkovano - lajkuj
         }
     });
 });
 
+// -----------------------------------------------------------------------------------------
+// CELA FUNCIJA LOGOVANJA
+
 function login() {
-    sessionStorage.setItem("cameFromLogin", "true");
-    window.location.href = "login.html";
+    sessionStorage.setItem("cameFromLogin", "true"); // kada korisnik klikne log-in, flag se postavlja
+    window.location.href = "login.html"; // I redirektuje se na login stranicu
 }
 
-// Get the button:
+
 let mybutton = document.getElementById("myBtn");
 
-// When the user scrolls down 20px from the top of the document, show the button
+function hideCommentButton() {
+    const addCommentBtn = document.getElementById("add-comment-btn");
+    const cameFromLogin = sessionStorage.getItem("cameFromLogin"); 
+
+    if (cameFromLogin === "true" && addCommentBtn) { // Ukoliko je flag postavljen na true, sakriva se dugme za login
+        addCommentBtn.style.display = "none";
+    }
+
+    sessionStorage.removeItem("cameFromLogin"); // flag se vraca na false
+}
+
+// -----------------------------------------------------------------------------------------
+// CELA FUNCKIJA VRACANJA NA VRH STRANICE SA STICKY DUGMETOM
+
 window.onscroll = function() {scrollFunction()};
 
 function scrollFunction() {
@@ -70,16 +86,7 @@ function topFunction() {
   document.documentElement.scrollTop = 0;
 }
 
-function hideCommentButton() {
-    const addCommentBtn = document.getElementById("add-comment-btn");
-    const cameFromLogin = sessionStorage.getItem("cameFromLogin");
 
-    if (cameFromLogin === "true" && addCommentBtn) {
-        addCommentBtn.style.display = "none";
-    }
-
-    sessionStorage.removeItem("cameFromLogin");
-}
 
 window.addEventListener("load", hideCommentButton);
 window.addEventListener("pageshow", hideCommentButton);
