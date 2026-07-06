@@ -50,7 +50,7 @@ border-radius: 5px;
     
     width: 40%;       /* Podesi širinu bannera po želji */
     height: auto;
-
+    
     box-shadow: 0 10px 30px rgba(0,0,0,0.5);
     border-radius: 0 0 15px 15px;
 }
@@ -74,7 +74,7 @@ border-radius: 5px;
     height: 80vh;
     width: auto;
     top: 30vh;
-    left: 140vh;
+    left: 120vh;
     
 }
 #bg-gradient{
