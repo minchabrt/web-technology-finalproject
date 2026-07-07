@@ -5,7 +5,26 @@ const resultsContainer = document.getElementById('results');
 
 let query;
 
+// -----------------------------------------------------------------------------------------
+// CELA FUNKCIJA MENU DUGMETA
 
+let toggleMenuFlag=false;
+
+function toggleMenu() {
+    if(!toggleMenuFlag) {
+    const menu = document.querySelector('ul');
+    menu.style.visibility = 'visible';
+    toggleMenuFlag = true;
+}
+else {
+    const menu = document.querySelector('ul');
+    menu.style.visibility = 'hidden';
+    toggleMenuFlag = false;
+}
+}
+
+// -----------------------------------------------------------------------------------------
+// CELA FUNKCIJA SEARCH FUNKCIJE (Enter dugme i search dugme)
 
 searchEnter.addEventListener("keydown", function(event){
     if(event.key === 'Enter'){
