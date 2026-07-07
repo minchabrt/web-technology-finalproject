@@ -6,7 +6,27 @@ const resultsContainer = document.getElementById('results');
 let query;
 
 // -----------------------------------------------------------------------------------------
-// CELA FUNKCIJA MENU DUGMETA
+// FUNKCIJA MENJANJA POZADINSKE SLIKE
+
+let bgimages = [
+
+    "Images/manga-panel-1.png",
+    "Images/manga-panel-2.png",
+    "Images/manga-panel-3.png",
+    "Images/manga-panel-4.png"
+
+];
+
+let currentImageIndex = 0;
+
+function changeBackgroundImage() {
+    currentImageIndex = (currentImageIndex + 1) % bgimages.length; // Bira se sledeca slika iz niza, a kada se dodje do kraja, vraca se na pocetak
+    document.body.style.backgroundImage = `url('${bgimages[currentImageIndex]}')`; // Menja se bg slika
+}
+
+setInterval(changeBackgroundImage, 5000); // Postavljanje intervala na 5sec
+// -----------------------------------------------------------------------------------------
+// FUNKCIJA MENU DUGMETA
 
 let toggleMenuFlag=false;
 
@@ -24,7 +44,7 @@ else {
 }
 
 // -----------------------------------------------------------------------------------------
-// CELA FUNKCIJA SEARCH FUNKCIJE (Enter dugme i search dugme)
+// FUNKCIJA SEARCH FUNKCIJE (Enter dugme i search dugme)
 
 searchEnter.addEventListener("keydown", function(event){
     if(event.key === 'Enter'){

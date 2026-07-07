@@ -9,7 +9,7 @@ position: relative;
     margin: 0;
     min-height: 100vh;
     overflow: hidden;
-    background-image: url("/Images/panelBg.png");
+    background-image: url("/Images/manga-panel-1.png");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -53,7 +53,8 @@ border-radius: 5px;
 }
 #menu-btn + ul {
     font-family: "San Francisco";
-    color: white;
+    
+    
     font-weight: bold;
     width: auto;
     visibility: hidden;
@@ -61,8 +62,14 @@ border-radius: 5px;
     padding: 0;
 }
 #menu-btn + ul li {
+    
     margin: 15px 0;
     font-size: 1.2em;
+}
+#menu-btn + ul li a {
+    text-decoration: none;
+    color: white;
+    text-shadow: 1px 1px 2px black;
 }
 #banner {
     position: absolute;
@@ -84,12 +91,13 @@ border-radius: 5px;
     width: 30%;
     z-index: 3;
 }
+
 #ch_naruto{
     position: absolute;
     height: 150vh;
     width: auto;
     top: 10vh;
-    
+    filter: drop-shadow(5px 10px 8px rgba(0, 0, 0, 0.5));
 }
 #ch_bleach{
     position: absolute;
@@ -97,6 +105,8 @@ border-radius: 5px;
     width: auto;
     top: 30vh;
     left: 120vh;
+    filter: drop-shadow(5px 10px 8px rgba(0, 0, 0, 0.5));
+
     
 }
 #bg-gradient{
