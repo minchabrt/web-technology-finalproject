@@ -6,6 +6,11 @@
 body{
     font-family: "San Francisco";
     margin: 0;
+    background-color: #000000;
+    background-image: url("Images/manga-panel-1.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
     position: relative;
     background-color: rgb(1, 32, 206);
     overflow: hidden;
@@ -34,6 +39,7 @@ body{
     position: relative;
     text-align: center;
     z-index: 5;
+    color: white;
 }
 #login-form input[type=text], #login-form input[type=password] {
     width: 20%;

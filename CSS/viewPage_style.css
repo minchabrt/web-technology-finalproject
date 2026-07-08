@@ -56,14 +56,15 @@ ul {
     top: 0;
     list-style-type: none;
     width: 100%;
-    margin: 0; /* Ovo osigurava da nema razmaka gore i sa strana */
+    margin: 0; 
     padding: 0;
     overflow: hidden;
     background-color: #0320fc;
-    display: block; /* Osigurava da se ponaša kao puni blok */
+    display: block; 
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
 }
 ul li {
-    padding-left: 20px; /* Ovo suptilno pomera logo udesno unutar plave trake */
+    padding-left: 20px;
 }
 
 ul li img{
@@ -83,9 +84,9 @@ ul li img{
     box-shadow: 0 10px 30px rgba(0,0,0,0.5);
 }
 #comment-section{
-    border:2px solid #000000; 
-    background-color: #424242;
     
+    
+    color: white;
     height: auto;
     max-width: 1200px;
     padding: 20px;
@@ -111,6 +112,8 @@ ul li img{
     max-width: 1200px;
     border: 1px solid #ccc;
     padding: 10px;
+    background-color: #424242;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
 }
 #add-comment-btn{
     background-color: #0320fc;

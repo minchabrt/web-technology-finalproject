@@ -19,12 +19,22 @@ let bgimages = [
 
 let currentImageIndex = 0;
 
-function changeBackgroundImage() {
-    currentImageIndex = (currentImageIndex + 1) % bgimages.length; // Bira se sledeca slika iz niza, a kada se dodje do kraja, vraca se na pocetak
-    document.body.style.backgroundImage = `url('${bgimages[currentImageIndex]}')`; // Menja se bg slika
-}
 
-setInterval(changeBackgroundImage, 5000); // Postavljanje intervala na 5sec
+
+bgimages.forEach(src => { // Kesiranje slika, kako ne bi bilo seckanja
+    const img = new Image();
+    img.src = src;
+});
+
+document.body.style.backgroundImage = `url('${bgimages[currentImageIndex]}')`; // Stavlja pocetnu bg sliku
+
+
+setInterval(() => {
+    currentImageIndex = (currentImageIndex + 1) % bgimages.length; // Izracunava index sledece bg slike
+    document.body.style.backgroundImage = `url('${bgimages[currentImageIndex]}')`; // Menja se bg slika
+}, 5000); // Postavljanje intervala na 5sec
+
+
 // -----------------------------------------------------------------------------------------
 // FUNKCIJA MENU DUGMETA
 
