@@ -12,7 +12,7 @@ fetch(`https://api.jikan.moe/v4/anime?q=${searchQuery}`) // Salje se API zahtev 
     .then(response => {
         if(response.status != 200){ // Ukoliko status nije OK, ispisuje se greska
             console.log(`Error. Status code ${response.status}`);
-            return;
+            throw new Error(`Status code ${response.status}`);
         }
 
     return response.json() // Ako je responese OK, vraca se json objekat
@@ -27,6 +27,10 @@ fetch(`https://api.jikan.moe/v4/anime?q=${searchQuery}`) // Salje se API zahtev 
         
         document.getElementById("page-loader").style.opacity = "1"; // Kada se dodele sve vrednosti, onda se tek load-a stranica
         console.log(data); // Za svaki slucaj izbacujemo stvari iz json file-a u konzolu
+    })
+    .catch(() => {
+        alert("zbog gasenja API u oktobru 2026, probajte ponovo!");
+        window.location.href = "index.html";
     });
  }
 
