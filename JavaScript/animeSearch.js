@@ -1,9 +1,41 @@
 const searchBtn = document.getElementById('search-btn');
 const searchInput = document.getElementById('search-input');
 const searchEnter = document.getElementById('search-input');
-const resultsContainer = document.getElementById('results');
 
 let query;
+
+const homepageData = {
+    popularToday: [
+        { title: "Jujutsu Kaisen", subtitle: "Action / Supernatural", imageUrl: "Images/top-3/jujutsu-kaisen.png" },
+        { title: "Solo Leveling", subtitle: "Fantasy / Adventure", imageUrl: "Images/top-3/solo-leveling.png" },
+        { title: "Demon Slayer", subtitle: "Action / Drama", imageUrl: "Images/top-3/demon-slayer.png" }
+    ]
+};
+
+function createAnimeCard(item) {
+    const card = document.createElement('article');
+    card.className = 'anime-card';
+
+    card.innerHTML = `
+        <div class="anime-poster-frame">
+            <img class="anime-poster-image" src="${item.imageUrl}" alt="${item.title} poster">
+        </div>
+        <div class="anime-card-copy">
+            <h3>${item.title}</h3>
+            <p>${item.subtitle}</p>
+        </div>
+    `;
+
+    return card;
+}
+
+function renderHomepageSections() {
+    const todayGrid = document.getElementById('popular-today-grid');
+
+    if (todayGrid) {
+        homepageData.popularToday.forEach(item => todayGrid.appendChild(createAnimeCard(item)));
+    }
+}
 
 // -----------------------------------------------------------------------------------------
 // FUNKCIJA MENJANJA POZADINSKE SLIKE
@@ -33,6 +65,8 @@ setInterval(() => {
     currentImageIndex = (currentImageIndex + 1) % bgimages.length; // Izracunava index sledece bg slike
     document.body.style.backgroundImage = `url('${bgimages[currentImageIndex]}')`; // Menja se bg slika
 }, 5000); // Postavljanje intervala na 5sec
+
+renderHomepageSections();
 
 
 // -----------------------------------------------------------------------------------------

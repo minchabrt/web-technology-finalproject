@@ -227,3 +227,109 @@ ul li img {
 #myBtn:hover {
     background-color: rgb(0, 21, 138);
 }
+
+@media (max-width: 768px) {
+    body {
+        padding-top: 110px;
+    }
+
+    #page-loader ul {
+        flex-wrap: wrap;
+        gap: 8px;
+        padding: 12px 12px 14px;
+    }
+
+    #page-loader ul li:first-child,
+    #page-loader ul li:last-child {
+        margin: 0;
+        flex: 1 1 38%;
+        text-align: center;
+    }
+
+    #page-loader ul li:nth-child(2) {
+        order: -1;
+        flex-basis: 100%;
+        text-align: center;
+        margin: 0;
+    }
+
+    #page-loader #logo {
+        height: 40px;
+    }
+
+    .main-kartica {
+        flex-direction: column;
+        gap: 16px;
+        margin: 16px 14px;
+        align-items: center;
+    }
+
+    .main-kartica img {
+        max-width: min(78vw, 320px);
+    }
+
+    .main-title {
+        width: 100%;
+        text-align: left;
+        background: rgba(255, 255, 255, 0.05);
+        border-radius: 20px;
+        padding: 16px;
+        box-sizing: border-box;
+        backdrop-filter: blur(10px);
+    }
+
+    .english-title {
+        font-size: 28px;
+    }
+
+    .japanese-title {
+        font-size: 18px;
+    }
+
+    #anime-desc {
+        font-size: 15px;
+        line-height: 1.65;
+    }
+
+    #anime-trailer {
+        width: 100%;
+        height: min(56vw, 230px);
+        min-height: 180px;
+        margin-top: 0;
+    }
+
+    #comment-section {
+        padding: 16px 14px 24px;
+    }
+
+    .comment-user {
+        border-radius: 18px;
+        padding: 14px;
+        box-sizing: border-box;
+    }
+
+    .comment-user h3 {
+        margin-top: 10px;
+    }
+
+    #comments img {
+        max-width: 56px;
+    }
+
+    #add-comment-btn {
+        width: 100%;
+        max-width: 420px;
+        display: block;
+        margin: 18px auto 0;
+        padding: 14px 18px;
+        border-radius: 12px;
+    }
+
+    #myBtn {
+        bottom: 16px;
+        right: 16px;
+        padding: 12px 14px;
+        font-size: 16px;
+        border-radius: 12px;
+    }
+}
