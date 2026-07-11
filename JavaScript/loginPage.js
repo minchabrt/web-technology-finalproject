@@ -1,4 +1,8 @@
 
+// -----------------------------------------------------------------------------------------
+// FUNKCIJA PROVERAVNJA DA LI SU POLJA ZA LOGOVANJE POPUNJENA
+
+
 function submitForm() {
 
     let username = document.getElementById("username").value;

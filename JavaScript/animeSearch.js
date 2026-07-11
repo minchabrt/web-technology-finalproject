@@ -4,36 +4,43 @@ const searchEnter = document.getElementById('search-input');
 
 let query;
 
-const homepageData = {
-    popularToday: [
-        { title: "Jujutsu Kaisen", subtitle: "Action / Supernatural", imageUrl: "Images/top-3/jujutsu-kaisen.png" },
-        { title: "Solo Leveling", subtitle: "Fantasy / Adventure", imageUrl: "Images/top-3/solo-leveling.png" },
-        { title: "Demon Slayer", subtitle: "Action / Drama", imageUrl: "Images/top-3/demon-slayer.png" }
+// -----------------------------------------------------------------------------------------
+// FUNKCIJA PRIKAZIVANJE TOP 3 ANIME-A
+
+
+// Kreiranje JSON objekta sa podacima za top 3 anime
+const topAnimeData = {
+    topThreeAnime: [
+        { animeTitle: "Jujutsu Kaisen", animeGenre: "Action / Supernatural", posterPath: "Images/top-3/jujutsu-kaisen.png" },
+        { animeTitle: "Solo Leveling", animeGenre: "Fantasy / Adventure", posterPath: "Images/top-3/solo-leveling.png" },
+        { animeTitle: "Demon Slayer", animeGenre: "Action / Drama", posterPath: "Images/top-3/demon-slayer.png" }
     ]
 };
 
-function createAnimeCard(item) {
+// Kreiranje top 3 anime kartice
+function createTopAnimeCard(item) {
     const card = document.createElement('article');
-    card.className = 'anime-card';
+    card.className = 'top-anime-card';
 
     card.innerHTML = `
-        <div class="anime-poster-frame">
-            <img class="anime-poster-image" src="${item.imageUrl}" alt="${item.title} poster">
+        <div class="top-anime-poster-frame">
+            <img class="top-anime-poster-image" src="${item.posterPath}" alt="${item.animeTitle} poster">
         </div>
-        <div class="anime-card-copy">
-            <h3>${item.title}</h3>
-            <p>${item.subtitle}</p>
+        <div class="top-anime-info">
+            <h3>${item.animeTitle}</h3>
+            <p>${item.animeGenre}</p>
         </div>
     `;
 
     return card;
 }
 
-function renderHomepageSections() {
-    const todayGrid = document.getElementById('popular-today-grid');
+// Prikazivanje top 3 anime sekcije na stranici
+function renderTopAnimeSection() {
+    const topAnimeGrid = document.getElementById('top-anime-grid');
 
-    if (todayGrid) {
-        homepageData.popularToday.forEach(item => todayGrid.appendChild(createAnimeCard(item)));
+    if (topAnimeGrid) {
+        topAnimeData.topThreeAnime.forEach(item => topAnimeGrid.appendChild(createTopAnimeCard(item)));
     }
 }
 
@@ -66,7 +73,7 @@ setInterval(() => {
     document.body.style.backgroundImage = `url('${bgimages[currentImageIndex]}')`; // Menja se bg slika
 }, 5000); // Postavljanje intervala na 5sec
 
-renderHomepageSections();
+renderTopAnimeSection();
 
 
 // -----------------------------------------------------------------------------------------

@@ -4,7 +4,8 @@ let searchedAnime = urlParam.get('anime'); // Uzima se vrednost parametra 'anime
 
 fetchData(searchedAnime); 
 
-
+// -----------------------------------------------------------------------------------------
+// FUNKCIJA SLANJA API ZAHTEVA I PRIKAZIVANJE PODATAKA NA STRANICI
 
 function fetchData(searchQuery){
 
@@ -35,7 +36,7 @@ fetch(`https://api.jikan.moe/v4/anime?q=${searchQuery}`) // Salje se API zahtev 
  }
 
 // -----------------------------------------------------------------------------------------
-// CELA FUNKCIJA LAJKOVANJA I OD-LAJKOVANJA KOMENTARA
+// FUNKCIJA LAJKOVANJA I OD-LAJKOVANJA KOMENTARA
 
 let buttons = document.querySelectorAll(".like-button");
 
@@ -52,7 +53,7 @@ buttons.forEach(function(button) {
 });
 
 // -----------------------------------------------------------------------------------------
-// CELA FUNCIJA LOGOVANJA
+// FUNCIJA LOGOVANJA
 
 function login() {
     sessionStorage.setItem("cameFromLogin", "true"); // kada korisnik klikne log-in, flag se postavlja
@@ -74,7 +75,7 @@ function hideCommentButton() {
 }
 
 // -----------------------------------------------------------------------------------------
-// CELA FUNCKIJA VRACANJA NA VRH STRANICE SA STICKY DUGMETOM
+// FUNCKIJA VRACANJA NA VRH STRANICE SA STICKY DUGMETOM
 
 window.onscroll = function() {scrollFunction()};
 
