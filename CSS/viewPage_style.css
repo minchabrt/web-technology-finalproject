@@ -26,7 +26,6 @@ body {
     transition: opacity 0.5s ease;
 }
 
-/* Anime card */
 #anime-poster {
     border: 2px solid #fefefe;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
@@ -99,7 +98,6 @@ body {
     margin-left: 16px;
 }
 
-/* Nav link appearance */
 #page-loader a#navigation,
 #page-loader ul li a {
     text-decoration: none;
@@ -140,7 +138,7 @@ ul li img {
     height: auto;
 }
 
-/* Trailer */
+
 #anime-trailer {
     margin-top: 10%;
     width: 30vw;
@@ -151,7 +149,7 @@ ul li img {
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
 }
 
-/* Comments */
+
 #comment-section {
     color: white;
     height: auto;
