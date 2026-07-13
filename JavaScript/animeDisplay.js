@@ -30,8 +30,14 @@ fetch(`https://api.jikan.moe/v4/anime?q=${searchQuery}`) // Salje se API zahtev 
         console.log(data); // Za svaki slucaj izbacujemo stvari iz json file-a u konzolu
     })
     .catch(() => {
-        alert("zbog gasenja API u oktobru 2026, probajte ponovo!");
-        window.location.href = "index.html";
+        alert("zbog gasenja API u oktobru 2026 - tu je probni sajt!");
+        document.getElementById("anime-title").innerHTML = "Probni anime";
+        document.getElementById("anime-title-japanese").innerHTML = "お試しアニメ";
+        document.getElementById("anime-poster").src="Images/poster.jpg";
+        document.getElementById("anime-desc").innerHTML = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ut mi eu purus facilisis maximus. Aliquam lacus dui, commodo sit amet tincidunt vel, tempor quis eros. Nullam et arcu et risus euismod tincidunt nec et augue. Vivamus elementum magna ac ex maximus, ut pulvinar metus tempus. Fusce ac ex elit. Phasellus efficitur feugiat risus eu facilisis. Vivamus sodales nibh non sem pellentesque semper. Nunc sit amet maximus arcu.";
+        document.getElementById("anime-trailer").src = "https://www.youtube.com/embed/8Qn_spdM5Zg";
+        
+        document.getElementById("page-loader").style.opacity = "1";
     });
  }
 
